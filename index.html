@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>安娜堡日常</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>我在安娜堡的日常</h1>
+        </header>
+
+        <!-- 时间显示区 -->
+        <div class="time-section">
+            <div class="time-card">
+                <div class="time-label">安娜堡</div>
+                <div id="annArborTime" class="time-value">--:--</div>
+                <div id="annArborDate" class="date-value"></div>
+            </div>
+            <div class="time-divider">⇄</div>
+            <div class="time-card">
+                <div class="time-label">北京</div>
+                <div id="beijingTime" class="time-value">--:--</div>
+                <div id="beijingDate" class="date-value"></div>
+            </div>
+        </div>
+
+        <!-- 当前在做的事 -->
+        <div class="card current-card">
+            <div class="card-label">此刻状态</div>
+            <div id="currentActivity" class="current-content">
+                加载中...
+            </div>
+        </div>
+
+        <!-- 今日日程 -->
+        <div class="card">
+            <div class="card-label">今天的安排</div>
+            <div id="todaySchedule" class="schedule-list"></div>
+        </div>
+
+        <!-- 每周状态 -->
+        <div class="card">
+            <div class="card-label">本周小结</div>
+            <div id="weeklyStatus" class="status-content">
+                加载中...
+            </div>
+        </div>
+
+        <!-- 留言区 -->
+        <div class="card">
+            <div class="card-label">留言</div>
+            <div class="message-input-row">
+                <input 
+                    type="text" 
+                    id="messageInput" 
+                    placeholder="写点什么..."
+                    maxlength="200"
+                >
+                <button id="sendBtn" onclick="sendMessage()">发送</button>
+            </div>
+            <div id="messageHint" class="message-hint"></div>
+            <div id="recentMessages" class="recent-messages"></div>
+            <button class="text-btn" onclick="toggleAllMessages()">
+                查看全部留言
+            </button>
+            <div id="allMessages" class="all-messages" style="display:none;"></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
